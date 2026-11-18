@@ -1,10 +1,10 @@
-# Maison Sunny du Midi — Hebrew franchise landing page
+# Maison Sunny du Midi — multilingual franchise landing pages
 
-Premium Hebrew RTL site for hospitality operators, fitness clubs, shopping centres and franchise prospects. Plain HTML/CSS/JavaScript, no build step, no runtime framework.
+Matching English (default), French (`fr/`) and Russian (`ru/`) LTR pages for hospitality operators, fitness clubs, shopping centres and franchise prospects. Plain HTML/CSS/JavaScript, no build step, no runtime framework.
 
 ## Intent
 
-The previous site was English, had empty image slots and a download-only preview form. The requested site is a premium Hebrew RTL franchise experience using authorized original brand materials and working contact destinations. This implementation retains the static stack, adds eight locally optimized original images, and uses the public brand contact details without claiming local representation.
+INTENT: the existing site was Hebrew-only; the user requested matching English, French and Russian pages, with English as the default and no Hebrew page. The three static pages share CSS, JavaScript and all eight original images. A language selector links every locale without relying on JavaScript; metadata, accessibility text, validation messages and email drafts are localized. Brand claims and contact destinations are preserved without claiming local representation.
 
 ## Run and verify
 
@@ -17,11 +17,11 @@ uv run --with playwright python tests/verify.py
 uv run --with playwright python tests/verify.py https://yacovdroridev.github.io/sunny-du-midi-franchise/
 ```
 
-The focused browser check covers Hebrew/RTL metadata, all eight images, internal anchors, five viewport widths (320, 390, 768, 1024, 1440), mobile navigation, venue selection, required fields, correctly encoded email draft, downloaded draft, stale draft invalidation and JavaScript errors. Screenshots are saved under `$TMPDIR/sunny-verification` (or the repository if TMPDIR is absent). Playwright is a verification-only dependency provided by `uv`; no package installation is required by the deployed website.
+The focused browser check covers EN/FR/RU LTR metadata, all language-switcher routes, localized validation and email content, all eight images, internal anchors, five viewport widths (320, 390, 768, 1024, 1440), mobile navigation, venue selection, required fields, correctly encoded email draft, downloaded draft, stale draft invalidation and JavaScript errors. Screenshots are saved under `$TMPDIR/sunny-verification` (or the repository if TMPDIR is absent). Playwright is a verification-only dependency provided by `uv`; no package installation is required by the deployed website.
 
 ## Contact behavior and privacy
 
-`Info@sunnydumidi.com` and `+1 917 277-8806` are the contact details published in the original site's footer. No previous configured contact destination existed in the repository. The form prepares a mailto link and offers a text download; it does **not** send an inquiry, store data or connect to a CRM. Visitors review and send in their own mail client. The email address is not verified as a dedicated franchise inbox. No live email or phone call is sent during tests. Google Fonts supplies Heebo and Frank Ruhl Libre; system fallbacks are provided.
+`Info@sunnydumidi.com` and `+1 917 277-8806` are the contact details published in the original site's footer. No previous configured contact destination existed in the repository. The form prepares a mailto link and offers a text download; it does **not** send an inquiry, store data or connect to a CRM. Visitors review and send in their own mail client. The email address is not verified as a dedicated franchise inbox. No live email or phone call is sent during tests. Google Fonts supplies Noto Sans and Cormorant Garamond; system fallbacks are provided.
 
 ## Deployment
 
